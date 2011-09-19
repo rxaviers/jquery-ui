@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" >
+	<title>jQuery UI Editable - Editors</title>
+	<link rel="stylesheet" href="../../themes/base/jquery.ui.all.css">
+	<script src="../../jquery-1.6.2.js"></script>
+	<script src="../../ui/jquery.ui.core.js"></script>
+	<script src="../../ui/jquery.ui.widget.js"></script>
+	<script src="../../ui/jquery.ui.button.js"></script>
+	<script src="../../ui/jquery.ui.mask.js"></script>
+	<script src="../../ui/jquery.ui.editable.js"></script>
+	<link rel="stylesheet" href="../demos.css">
+	<style>
+    .demo p span { display: inline-block; }
+    .demo p span.sample { font-size: 14px; }
+    .demo p span.info { font-family:fixed, monospace; white-space:pre; margin-left:2em; padding:0.5em; border: 1px solid #000; background: #eee; color: #333; vertical-align: middle; }
+	</style>
+	<script>
+	$(function() {
+		$( "#default" ).editable();
+		$( "#mask1" ).editable({editor: "mask", editorOptions: { mask: "99/99/9999" }});
+		$( "#mask2" ).editable({ editor: "mask", editorOptions: { mask: "(999) 999-9999" }});
+
+		$( "#start-all" )
+            .button()
+            .click(function() {
+                $( ".sample" ).editable("start");
+            });
+		$( "#submit-all" )
+            .button()
+            .click(function() {
+                $( ".sample" ).editable("submit");
+            });
+		$( "#cancel-all" )
+            .button()
+            .click(function() {
+                $( ".sample" ).editable("cancel");
+            });
+	});
+	</script>
+</head>
+<body>
+
+<div class="demo">
+
+<button id="start-all">Edit all</button>
+<button id="submit-all">Submit all changes</button>
+<button id="cancel-all">Skip all changes</button>
+
+<h2>Text (default)</h2>
+
+<p>
+<span class="sample" id="default">John Doe</span>
+</p>
+
+<h2>Mask</h2>
+
+<p>
+<span class="sample" id="mask1">__/__/____</span>
+<span class="info">{ editor: "mask", editorOptions: { mask: "99/99/9999" }}</span>
+</p>
+
+<p>
+<span class="sample" id="mask2">(___) ___-____</span>
+<span class="info">{ editor: "mask", editorOptions: { mask: "(999) 999-9999" }}</span>
+</p>
+
+</div><!-- End demo -->
+
+
+
+<div class="demo-description">
+<p>
+Click at the text to edit it.
+</p>
+<p>
+Save your changes by submiting (pressing Enter or clicking the save button).
+</p>
+<p>
+Abort your changes by pressing Esc or clicking the cancel button.
+</p>
+</div><!-- End demo-description -->
+
+</body>
+</html>

@@ -11,6 +11,7 @@
  *	jquery.ui.core.js
  *	jquery.ui.widget.js
  *	jquery.ui.button.js
+ *	jquery.ui.mask.js
  */
 (function( $, undefined ) {
 
@@ -265,6 +266,18 @@ $.ui.editable.editors = {
 	},
 	textarea: $.noop,
 	select: $.noop,
+	mask: {
+		element: function( editable ) {
+			return $.ui.editable.editors.text.element( editable );
+		},
+		bind: function( editable ) {
+			$.ui.editable.editors.text.bind( editable );
+			$( "input", editable.element ).mask( editable.options.editorOptions );
+		},
+		value: function( editable, form ) {
+			return $.ui.editable.editors.text.value( editable, form );
+		}
+	},
 	spinner: $.noop 
 };
 

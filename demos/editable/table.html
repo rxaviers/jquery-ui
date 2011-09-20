@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" >
+	<title>jQuery UI Editable - Table</title>
+	<link rel="stylesheet" href="../../themes/base/jquery.ui.all.css">
+	<script src="../../jquery-1.6.2.js"></script>
+	<script src="../../ui/jquery.ui.core.js"></script>
+	<script src="../../ui/jquery.ui.widget.js"></script>
+	<script src="../../ui/jquery.ui.button.js"></script>
+	<script src="../../ui/jquery.ui.spinner.js"></script>
+	<script src="../../ui/jquery.ui.mask.js"></script>
+	<script src="../../ui/jquery.ui.timepicker.js"></script>
+	<script src="../../ui/jquery.ui.editable.js"></script>
+	<link rel="stylesheet" href="../demos.css">
+	<style>
+    .demo td { width: 10em; }
+    .demo td form input { width: 8em; }
+    .demo td.edit { white-space: nowrap; }
+	</style>
+	<script>
+	$(function() {
+		$( "td.text" ).editable({ buttons: null });
+		$( "td.spinner" ).editable({ buttons: null, editor: "spinner" });
+		$( "td.date" ).editable({ buttons: null, editor: "mask", editorOptions: { mask: "99/99/9999" }});
+		$( "td.time" ).editable({ buttons: null, editor: "timepicker" });
+
+		$( "td > .edit" )
+            .button({
+                icons: { primary: "ui-icon-pencil" },
+                text: false
+            })
+            .click(function() {
+                $( "button", $( this ).parent() ).toggle();
+                $( ".ui-editable", $( this ).closest( "tr" ) ).editable( "start" );
+            });
+		$( "td > .save" )
+            .button({
+                icons: { primary: "ui-icon-disk" },
+                text: false
+            })
+            .click(function() {
+                $( "button", $( this ).parent() ).toggle();
+                $( ".ui-editable", $( this ).closest( "tr" ) ).editable( "submit" );
+            })
+            .hide();
+		$( "td > .cancel" )
+            .button({
+                icons: { primary: "ui-icon-cancel" },
+                text: false
+            })
+            .click(function() {
+                $( "button", $( this ).parent() ).toggle();
+                $( ".ui-editable", $( this ).closest( "tr" ) ).editable( "cancel" );
+            })
+            .hide();
+
+		$( "#start-all" )
+            .button()
+            .click(function() {
+                $( ".ui-editable" ).editable( "start" );
+            });
+		$( "#submit-all" )
+            .button()
+            .click(function() {
+                $( ".ui-editable" ).editable( "submit" );
+            });
+		$( "#cancel-all" )
+            .button()
+            .click(function() {
+                $( ".ui-editable" ).editable( "cancel" );
+            });
+	});
+	</script>
+</head>
+<body>
+
+<div class="demo">
+
+<button id="start-all">Edit all</button>
+<button id="submit-all">Submit all changes</button>
+<button id="cancel-all">Skip all changes</button>
+
+<table id="developers-local" class="ui-widget" tabindex="0">
+	<thead>
+		<tr>
+			<td class="ui-widget-header" colspan="9">Developers Grid</td>
+		</tr>
+		<tr>
+			<th width="70" data-property="firstName" class="ui-state-default">First Name</th>
+			<th width="70" data-property="lastName" class="ui-state-default">Last Name</th>
+			<th width="70" data-editor="countrycomplete" data-property="country" class="ui-state-default">Country</th>
+			<th width="60" data-editor="spinner" data-type="number" data-property="bitcoins" class="ui-state-default">Bitcoins</th>
+			<th width="70" data-template="#cell-date-tmpl" class="ui-state-default">Date</th>
+			<th width="80" data-template="#cell-time-tmpl" class="ui-state-default">Time</th>
+			<th width="60" data-editor-options="{&quot;min&quot;:-1, &quot;max&quot;: 125}" data-editor="randomSpinner" data-type="number" data-property="random.value" class="ui-state-default">Random</th>
+			<th width="40" data-template="#cell-edit-tmpl" class="ui-state-default">Edit</th>
+		</tr>
+	</thead>
+	<tbody>
+        <tr>
+            <td class="text">Richard</td>
+            <td class="text">Worth</td>
+            <td class="text">USA</td>
+            <td class="spinner">150</td>
+            <td class="date">07/11/1975</td>
+            <td class="time">8:00:00 PM</td>
+            <td class="spinner">10</td>
+            <td class="edit"><button class="edit">Edit</button><button class="save">Save</button><button class="cancel">Cancel</button></td>
+        </tr>
+        <tr>
+            <td class="text">Scott</td>
+            <td class="text">González</td>
+            <td class="text">USA</td>
+            <td class="spinner">10</td>
+            <td class="date">05/23/1981</td>
+            <td class="time">9:18:00 AM</td>
+            <td class="spinner">20</td>
+            <td class="edit"><button class="edit">Edit</button><button class="save">Save</button><button class="cancel">Cancel</button></td>
+        </tr>
+        <tr>
+            <td class="text">Jörn</td>
+            <td class="text">Zaefferer</td>
+            <td class="text">Germany</td>
+            <td class="spinner">1</td>
+            <td class="date">06/03/1984</td>
+            <td class="time">1:07:00 AM</td>
+            <td class="spinner">30</td>
+            <td class="edit"><button class="edit">Edit</button><button class="save">Save</button><button class="cancel">Cancel</button></td>
+        </tr>
+        <tr>
+            <td class="text">Carl</td>
+            <td class="text">Worth</td>
+            <td class="text">Canada</td>
+            <td class="spinner">1500</td>
+            <td class="date">07/11/1975</td>
+            <td class="time">8:01:40 PM</td>
+            <td class="spinner">40</td>
+            <td class="edit"><button class="edit">Edit</button><button class="save">Save</button><button class="cancel">Cancel</button></td>
+        </tr>
+        <tr>
+            <td class="text">Adam</td>
+            <td class="text">Piano</td>
+            <td class="text">USA</td>
+            <td class="spinner">1337</td>
+            <td class="date">05/10/1981</td>
+            <td class="time">3:44:40 PM</td>
+            <td class="spinner">50</td>
+            <td class="edit"><button class="edit">Edit</button><button class="save">Save</button><button class="cancel">Cancel</button></td>
+        </tr>
+        <tr>
+            <td class="text">Remy</td>
+            <td class="text">Sharp</td>
+            <td class="text">UK</td>
+            <td class="spinner">55.5</td>
+            <td class="date">09/11/1978</td>
+            <td class="time">5:48:35 AM</td>
+            <td class="spinner">60</td>
+            <td class="edit"><button class="edit">Edit</button><button class="save">Save</button><button class="cancel">Cancel</button></td>
+        </tr>
+        <tr>
+            <td class="text">Haymo</td>
+            <td class="text">Meran</td>
+            <td class="text">Austria</td>
+            <td class="spinner">0</td>
+            <td class="date">01/12/1985</td>
+            <td class="time">1:21:55 AM</td>
+            <td class="spinner">70</td>
+            <td class="edit"><button class="edit">Edit</button><button class="save">Save</button><button class="cancel">Cancel</button></td>
+        </tr>
+        <tr>
+            <td class="text">Corey</td>
+            <td class="text">Frang</td>
+            <td class="text">USA</td>
+            <td class="spinner">0</td>
+            <td class="date">22/07/1989</td>
+            <td class="time">9:30:07 PM</td>
+            <td class="spinner">80</td>
+            <td class="edit"><button class="edit">Edit</button><button class="save">Save</button><button class="cancel">Cancel</button></td>
+        </tr>
+        <tr>
+            <td class="text">Rafael</td>
+            <td class="text">Xavier</td>
+            <td class="text">Brazil</td>
+            <td class="spinner">0</td>
+            <td class="date">02/01/1982</td>
+            <td class="time">4:12:20 AM</td>
+            <td class="spinner">90</td>
+            <td class="edit"><button class="edit">Edit</button><button class="save">Save</button><button class="cancel">Cancel</button></td>
+        </tr>
+    </tbody>
+</table>
+
+</div><!-- End demo -->
+
+
+
+<div class="demo-description">
+<p>
+Click the pencil to edit the row. Click the cell to edit it.
+</p>
+<p>
+Save your changes by submiting pressing Enter.
+</p>
+<p>
+Abort your changes by pressing Esc.
+</p>
+</div><!-- End demo-description -->
+
+</body>
+</html>

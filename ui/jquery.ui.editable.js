@@ -281,7 +281,7 @@ $.extend($.ui.editable.editors, {
 		element: $.ui.editable.editors.text.element,
 		bind: function( editable ) {
 			$.ui.editable.editors.text.bind( editable );
-			$( "input", editable.element ).mask( editable.options.editorOptions );
+			$( "input", editable.element ).mask( editable.options.editorOptions ).focus();
 		},
 		value: $.ui.editable.editors.text.value
 	},
@@ -292,7 +292,7 @@ $.extend($.ui.editable.editors, {
 		},
 		bind: function( editable ) {
 			$.ui.editable.editors.text.bind( editable );
-			$( "input", editable.element ).spinner( editable.options.editorOptions );
+			$( "input", editable.element ).spinner( editable.options.editorOptions ).focus();
 		},
 		value: $.ui.editable.editors.text.value
 	},
@@ -303,7 +303,7 @@ $.extend($.ui.editable.editors, {
 		},
 		bind: function( editable ) {
 			$.ui.editable.editors.text.bind( editable );
-			$( "input", editable.element ).timepicker( editable.options.editorOptions );
+			$( "input", editable.element ).timepicker( editable.options.editorOptions ).focus();
 		},
 		value: $.ui.editable.editors.text.value
 	}

@@ -11,18 +11,21 @@
  *	jquery.ui.core.js
  *	jquery.ui.widget.js
  *	jquery.ui.button.js
+ *	jquery.ui.spinner.js
  *	jquery.ui.mask.js
+ *	jquery.ui.timepicker.js
  */
 (function( $, undefined ) {
 
 var editableClass = "ui-editable",
-	formClass = "ui-editable-form",
+
 	buttonClass = "ui-editable-button",
 	cancelClass = "ui-editable-cancel",
+	formClass = "ui-editable-form",
+	hoverableClass = "ui-widget-content ui-state-default ui-corner-all",
 	inputClass = "ui-editable-input",
 	placeholderClass = "ui-editable-placeholder",
 	saveClass = "ui-editable-save",
-	hoverableClass = "ui-widget-content ui-state-default ui-corner-all",
 
 	cancelIconClass = "ui-icon-cancel",
 	saveIconClass = "ui-icon-disk",
@@ -46,7 +49,8 @@ $.widget( "ui.editable", {
 			type: "button",
 			text: "Cancel"
 		},
-		placeholder: "Click to edit"
+		placeholder: "Click to edit",
+		frame: true
 	},
 
 	start: function() {
@@ -133,13 +137,15 @@ $.widget( "ui.editable", {
 			.addClass( formClass )
 			.append( $( "<span></span>" )
 				.append( editor.element( this )));
-		if ( this.options.buttons == "inside" ) {
-			this.frame = form;
+		if ( this.options.frame ) {
+			if ( this.options.buttons == "inside" ) {
+				this.frame = form;
+			}
+			else {
+				this.frame = $( "> span" , form );
+			}
+			this._hoverable( this.frame.addClass( hoverableClass ) );
 		}
-		else {
-			this.frame = $( "> span" , form );
-		}
-		this._hoverable( this.frame.addClass( hoverableClass ) );
 		if( this.options.buttons && this.options.save ) {
 			form.append( this._saveButton() );
 		}
@@ -242,19 +248,22 @@ $.ui.editable.editors = {
 				.addClass( inputClass );
 		},
 		bind: function( editable ) {
-			var self = editable;
 			$( "input", editable.element )
 				.focus( function() {
-					self.frame.addClass( activeStateClass );
+					if ( editable.options.frame ) {
+						editable.frame.addClass( activeStateClass );
+					}
 				})
 				.blur( function() {
-					self.frame.removeClass( activeStateClass );
+					if ( editable.options.frame ) {
+						editable.frame.removeClass( activeStateClass );
+					}
 				})
 				.bind( "keydown", function( event ) {
 					var keyCode = $.ui.keyCode;
 					switch ( event.keyCode ) {
 					case keyCode.ESCAPE:
-						self._cancel.call( self );
+						editable._cancel.call( editable );
 						return true;
 					}
 				})
@@ -265,20 +274,39 @@ $.ui.editable.editors = {
 		}
 	},
 	textarea: $.noop,
-	select: $.noop,
+	select: $.noop
+};
+$.extend($.ui.editable.editors, {
 	mask: {
-		element: function( editable ) {
-			return $.ui.editable.editors.text.element( editable );
-		},
+		element: $.ui.editable.editors.text.element,
 		bind: function( editable ) {
 			$.ui.editable.editors.text.bind( editable );
 			$( "input", editable.element ).mask( editable.options.editorOptions );
 		},
-		value: function( editable, form ) {
-			return $.ui.editable.editors.text.value( editable, form );
-		}
+		value: $.ui.editable.editors.text.value
 	},
-	spinner: $.noop 
-};
+	spinner: {
+		element: function( editable ) {
+			editable.options.frame = false;
+			return $.ui.editable.editors.text.element( editable );
+		},
+		bind: function( editable ) {
+			$.ui.editable.editors.text.bind( editable );
+			$( "input", editable.element ).spinner( editable.options.editorOptions );
+		},
+		value: $.ui.editable.editors.text.value
+	},
+	timepicker: {
+		element: function( editable ) {
+			editable.options.frame = false;
+			return $.ui.editable.editors.text.element( editable );
+		},
+		bind: function( editable ) {
+			$.ui.editable.editors.text.bind( editable );
+			$( "input", editable.element ).timepicker( editable.options.editorOptions );
+		},
+		value: $.ui.editable.editors.text.value
+	}
+});
 
 })( jQuery );

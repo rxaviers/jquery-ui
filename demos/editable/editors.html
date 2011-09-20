@@ -8,7 +8,9 @@
 	<script src="../../ui/jquery.ui.core.js"></script>
 	<script src="../../ui/jquery.ui.widget.js"></script>
 	<script src="../../ui/jquery.ui.button.js"></script>
+	<script src="../../ui/jquery.ui.spinner.js"></script>
 	<script src="../../ui/jquery.ui.mask.js"></script>
+	<script src="../../ui/jquery.ui.timepicker.js"></script>
 	<script src="../../ui/jquery.ui.editable.js"></script>
 	<link rel="stylesheet" href="../demos.css">
 	<style>
@@ -20,7 +22,10 @@
 	$(function() {
 		$( "#default" ).editable();
 		$( "#mask1" ).editable({editor: "mask", editorOptions: { mask: "99/99/9999" }});
+		$( "#spinner1" ).editable({ editor: "spinner" });
 		$( "#mask2" ).editable({ editor: "mask", editorOptions: { mask: "(999) 999-9999" }});
+		$( "#timepicker1" ).editable({ editor: "timepicker" });
+		$( "#timepicker2" ).editable({ editor: "timepicker", editorOptions: { ampm: false }});
 
 		$( "#start-all" )
             .button()
@@ -54,6 +59,13 @@
 <span class="sample" id="default">John Doe</span>
 </p>
 
+<h2>Spinner</h2>
+
+<p>
+<span class="sample" id="spinner1">1</span>
+<span class="info">{ editor: "spinner" }</span>
+</p>
+
 <h2>Mask</h2>
 
 <p>
@@ -64,6 +76,18 @@
 <p>
 <span class="sample" id="mask2">(___) ___-____</span>
 <span class="info">{ editor: "mask", editorOptions: { mask: "(999) 999-9999" }}</span>
+</p>
+
+<h2>Timepicker</h2>
+
+<p>
+<span class="sample" id="timepicker1">__:__:__ __</span>
+<span class="info">{ editor: "timepicker" }</span>
+</p>
+
+<p>
+<span class="sample" id="timepicker2">__:__:__</span>
+<span class="info">{ editor: "timepicker", editorOptions: { ampm: false }}</span>
 </p>
 
 </div><!-- End demo -->

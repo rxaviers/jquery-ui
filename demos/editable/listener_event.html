@@ -24,8 +24,8 @@
 			event: 'mouseenter'
 		});
 		$( "#editable" )
-			.bind( "editsubmit", function( ev, ui ) {
-				log( "submit: " + ui.value );
+			.bind( "editsave", function( ev, ui ) {
+				log( "save: " + ui.value );
 			})
 			.bind( "editchange", function( ev, ui ) {
 				log( "change: " + ui.value );
@@ -53,7 +53,7 @@
 
 <div class="demo-description">
 <p>
-Save your changes by submiting (pressing Enter or clicking the save button).
+Save your changes by pressing Enter or clicking the save button.
 </p>
 <p>
 Abort your changes by pressing Esc or clicking the cancel button.

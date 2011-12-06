@@ -46,10 +46,10 @@
 			.click(function() {
 				$( ".sample" ).editable("start");
 			});
-		$( "#submit-all" )
+		$( "#save-all" )
 			.button()
 			.click(function() {
-				$( ".sample" ).editable("submit");
+				$( ".sample" ).editable("save");
 			});
 		$( "#cancel-all" )
 			.button()
@@ -64,7 +64,7 @@
 <div class="demo">
 
 <button id="start-all">Edit all</button>
-<button id="submit-all">Submit all changes</button>
+<button id="save-all">Submit all changes</button>
 <button id="cancel-all">Skip all changes</button>
 
 <p>
@@ -88,7 +88,7 @@ Textarea
 Click at text to edit it.
 </p>
 <p>
-Save your changes by submiting (pressing Enter or clicking the save button).
+Save your changes by pressing Enter or clicking the save button.
 </p>
 <p>
 Abort your changes by pressing Esc or clicking the cancel button.

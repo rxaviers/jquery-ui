@@ -48,7 +48,7 @@ $.widget( "ui.editable", {
 		}
 	},
 
-	submit: function() {
+	save: function() {
 		$( "form", this.element ).submit();
 	},
 
@@ -105,7 +105,7 @@ $.widget( "ui.editable", {
 		
 			if ( !this._editing ) {}
 			else if ( $this.hasClass( saveClass ) || $this.parent().hasClass( saveClass ) ) {
-				this.submit();
+				this.save();
 				return false;
 			}
 			else if ( $this.hasClass( cancelClass ) || $this.parent().hasClass( cancelClass ) ) {
@@ -128,7 +128,7 @@ $.widget( "ui.editable", {
 					if(this._skipEnterSubmit) {
 						break;
 					}
-					this.submit();
+					this.save();
 					return false;
 				case keyCode.ESCAPE:
 					this._cancel();
@@ -257,7 +257,7 @@ $.widget( "ui.editable", {
 			value: newValue
 		};
 
-		if ( this._trigger( "submit", event, hash ) === false ) {
+		if ( this._trigger( "save", event, hash ) === false ) {
 			return;
 		}
 		if ( this.value() !== newValue ) {

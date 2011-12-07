@@ -8,7 +8,7 @@
  * http://docs.jquery.com/UI/Tooltip#theming
  */
 .ui-editable .ui-widget-content.ui-state-default {background: none !important;}
-.ui-editable-form { position: relative; overflow: hidden; padding: 0; vertical-align: middle; z-index: 2; }
+.ui-editable-edit-area { position: relative; overflow: hidden; padding: 0; vertical-align: middle; z-index: 2; }
 .ui-editable-input-area { padding: 0.4em; }
 .ui-editable-placeholder { color: #555; font-style: italic; }
 .ui-editable-input { border: none; display: block; padding: 0; margin: 0;

@@ -16,7 +16,7 @@
 (function( $, undefined ) {
 
 var editableClass = "ui-editable ui-widget",
-	formClass = "ui-editable-form",
+	editAreaClass = "ui-editable-edit-area",
 	buttonClass = "ui-editable-button",
 	buttonsAreaClass = "ui-editable-buttons-area",
 	cancelClass = "ui-editable-cancel",
@@ -49,7 +49,7 @@ $.widget( "ui.editable", {
 	},
 
 	save: function() {
-		$( "form", this.element ).submit();
+		this._save();
 	},
 
 	cancel: function() {
@@ -105,7 +105,7 @@ $.widget( "ui.editable", {
 		
 			if ( !this._editing ) {}
 			else if ( $this.hasClass( saveClass ) || $this.parent().hasClass( saveClass ) ) {
-				this.save();
+				this._save();
 				return false;
 			}
 			else if ( $this.hasClass( cancelClass ) || $this.parent().hasClass( cancelClass ) ) {
@@ -128,7 +128,7 @@ $.widget( "ui.editable", {
 					if(this._skipEnterSubmit) {
 						break;
 					}
-					this.save();
+					this._save();
 					return false;
 				case keyCode.ESCAPE:
 					this._cancel();
@@ -159,9 +159,9 @@ $.widget( "ui.editable", {
             // Create a new stacking context on element by setting its z-index from auto to 0.
 			this.element.css( "z-index", 0 );
 		}
-		this.element.html( this._form() );
+		this.element.html( this._drawEdit() );
+		this._editor.bind( this );
 		this._adjustInputWidth();
-		this._formEvents();
 	},
 
 	_placeholder: function() {
@@ -170,21 +170,21 @@ $.widget( "ui.editable", {
 			.html( this.options.placeholder );
 	},
 
-	_form: function() {
-		var form = $( "<form></form>" ).addClass( formClass );
-		this.frame = form;
+	_drawEdit: function() {
+		var editArea = $( "<div></div>" ).addClass( editAreaClass );
+		this.frame = editArea;
 		this._hoverable( this.frame.addClass( hoverableClass ) );
 		$( "<div></div>" )
 			.addClass( inputAreaClass )
 			.append( this._editor.element( this ) )
-			.appendTo( form );
+			.appendTo( editArea );
 		if( this.options.buttons ) {
-			this._drawButtons().appendTo( form );
+			this._drawButtons().appendTo( editArea );
 		}
-		return form;
+		return editArea;
 	},
 
-	_drawButtons: function( form ) {
+	_drawButtons: function() {
 		var i, buttons = {}, ordered_buttons = $([]),
 			buttonsArea = $( "<div></div>" ).addClass( buttonsAreaClass );
 		for( i in this.options.buttons ) {
@@ -242,26 +242,15 @@ $.widget( "ui.editable", {
 		$( "." + inputAreaClass, this.frame ).css( margin );
 	},
 
-	_formEvents: function() {
-		var self = this;
-		$( "form", this.element )
-			.submit( function( event ) {
-				self._save.call( self, event, self._editor.value( self, this ) );
-				return false;
-			});
-		this._editor.bind( this );
-	},
+	_save: function() {
+		var newValue = this._editor.value( this ),
+			hash = { value: newValue };
 
-	_save: function( event, newValue ) {
-		var hash = {
-			value: newValue
-		};
-
-		if ( this._trigger( "save", event, hash ) === false ) {
+		if ( this._trigger( "save", null, hash ) === false ) {
 			return;
 		}
 		if ( this.value() !== newValue ) {
-			if ( this._trigger( "change", event, hash ) === false ) {
+			if ( this._trigger( "change", null, hash ) === false ) {
 				return;
 			}
 			this.value( newValue );
@@ -301,8 +290,8 @@ $.ui.editable.editors = {
 				})
 				.focus();
 		},
-		value: function( editable, form ) {
-			return $( "input", form ).val();
+		value: function( editable ) {
+			return $( "input", editable.element ).val();
 		}
 	},
 	textarea: {
@@ -324,8 +313,8 @@ $.ui.editable.editors = {
 				})
 				.focus();
 		},
-		value: function( editable, form ) {
-			return $( "textarea", form ).val().replace(/\r\n|\r|\n/g, "<br/>");
+		value: function( editable ) {
+			return $( "textarea", editable.element ).val().replace(/\r\n|\r|\n/g, "<br/>");
 		}
 	},
 	select: $.noop,
@@ -338,8 +327,8 @@ $.ui.editable.editors = {
 			$( "input", editable.element ).datepicker( editable._editorOptions );
 			$.ui.editable.editors.text.bind( editable );
 		},
-		value: function( editable, form ) {
-			return $.ui.editable.editors.text.value( editable, form );
+		value: function( editable ) {
+			return $.ui.editable.editors.text.value( editable );
 		}
 	}
 };

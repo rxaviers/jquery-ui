@@ -147,7 +147,7 @@ $.widget( "ui.editable", {
 	_show: function() {
 		this._editing = undefined;
 		if ( this._z_index == "auto" ) {
-            // Rolling back element z-index.
+			// Rolling back element z-index.
 			this.element.css( "z-index", "auto" );
 		}
 		this.element.html( this.value() || this._placeholder() );
@@ -156,7 +156,7 @@ $.widget( "ui.editable", {
 	_edit: function() {
 		this._editing = true;
 		if ( this._z_index == "auto" ) {
-            // Create a new stacking context on element by setting its z-index from auto to 0.
+			// Create a new stacking context on element by setting its z-index from auto to 0.
 			this.element.css( "z-index", 0 );
 		}
 		this.element.html( this._drawEdit() );

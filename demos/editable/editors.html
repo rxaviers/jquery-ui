@@ -31,7 +31,7 @@
 			}
 		});
 		$( "#datepicker" ).editable({
-			// Set an editor while passing custom options to it
+			// Setting a different editor with custom options
 			editor: {
 				datepicker: {
 					changeMonth: true,
@@ -39,6 +39,14 @@
 				}
 			},
 			placeholder: "Datepicker"
+		});
+		$( "#select" ).editable({
+			editor: {
+				select: {
+					source: languages
+				}
+			},
+			placeholder: "Select"
 		});
 
 		$( "#start-all" )
@@ -58,6 +66,169 @@
 			});
 	});
 	</script>
+
+	<script>
+languages = [
+	"Use browser's default",
+	{value: "af", label: "Afrikaans"},
+	{value: "sq", label: "Albanian"},
+	{value: "ar-dz", label: "Arabic (Algeria)"},
+	{value: "ar", label: "Arabic"},
+	{value: "ar-bh", label: "Arabic (Bahrain)"},
+	{value: "ar-eg", label: "Arabic (Egypt)"},
+	{value: "ar-iq", label: "Arabic (Iraq)"},
+	{value: "ar-jo", label: "Arabic (Jordan)"},
+	{value: "ar-kw", label: "Arabic (Kuwait)"},
+	{value: "ar-lb", label: "Arabic (Lebanon)"},
+	{value: "ar-ly", label: "Arabic (libya)"},
+	{value: "ar-ma", label: "Arabic (Morocco)"},
+	{value: "ar-om", label: "Arabic (Oman)"},
+	{value: "ar-qa", label: "Arabic (Qatar)"},
+	{value: "ar-sa", label: "Arabic (Saudi Arabia)"},
+	{value: "ar-sy", label: "Arabic (Syria)"},
+	{value: "ar-tn", label: "Arabic (Tunisia)"},
+	{value: "ar-ae", label: "Arabic (U.A.E.)"},
+	{value: "ar-ye", label: "Arabic (Yemen)"},
+	{value: "hy", label: "Armenian"},
+	{value: "as", label: "Assamese"},
+	{value: "az", label: "Azeri (Cyrillic)"},
+	{value: "az", label: "Azeri (Latin)"},
+	{value: "eu", label: "Basque"},
+	{value: "be", label: "Belarusian"},
+	{value: "bn", label: "Bengali"},
+	{value: "bg", label: "Bulgarian"},
+	{value: "ca", label: "Catalan"},
+	{value: "cs", label: "Chech"},
+	{value: "zh-cn", label: "Chinese (China)"},
+	{value: "zh-hk", label: "Chinese (Hong Kong SAR)"},
+	{value: "zh-mo", label: "Chinese (Macau SAR)"},
+	{value: "zh-sg", label: "Chinese (Singapore)"},
+	{value: "zh-tw", label: "Chinese (Taiwan)"},
+	{value: "zh", label: "Chinese"},
+	{value: "hr", label: "Croatian"},
+	{value: "da", label: "Danish"},
+	{value: "div", label: "Divehi"},
+	{value: "nl-be", label: "Dutch (Belgium)"},
+	{value: "nl", label: "Dutch (Netherlands)"},
+	{value: "en-au", label: "English (Australia)"},
+	{value: "en-bz", label: "English (Belize)"},
+	{value: "en-ca", label: "English (Canada)"},
+	{value: "en", label: "English (Caribbean)"},
+	{value: "en", label: "English"},
+	{value: "en-ie", label: "English (Ireland)"},
+	{value: "en-jm", label: "English (Jamaica)"},
+	{value: "en-nz", label: "English (New Zealand)"},
+	{value: "en-ph", label: "English (Philippines)"},
+	{value: "en-za", label: "English (South Africa)"},
+	{value: "en-tt", label: "English (Trinidad)"},
+	{value: "en-gb", label: "English (United Kingdom)"},
+	{value: "en-us", label: "English (United States)"},
+	{value: "en-zw", label: "English (Zimbabwe)"},
+	{value: "et", label: "Estonian"},
+	{value: "fo", label: "Faeroese"},
+	{value: "fa", label: "Farsi"},
+	{value: "fi", label: "Finnish"},
+	{value: "fr-be", label: "French (Belgium)"},
+	{value: "fr-ca", label: "French (Canada)"},
+	{value: "fr", label: "French (France)"},
+	{value: "fr-lu", label: "French (Luxembourg)"},
+	{value: "fr-mc", label: "French (Monaco)"},
+	{value: "fr-ch", label: "French (Switzerland)"},
+	{value: "mk", label: "FYRO Macedonian"},
+	{value: "gd", label: "Gaelic"},
+	{value: "ka", label: "Georgian"},
+	{value: "de-at", label: "German (Austria)"},
+	{value: "de", label: "German (Germany)"},
+	{value: "de-lu", label: "German (lexumbourg)"},
+	{value: "de-li", label: "German (Liechtenstein)"},
+	{value: "de-ch", label: "German (Switzerland)"},
+	{value: "el", label: "Greek"},
+	{value: "gu", label: "Gujarati"},
+	{value: "he", label: "Hebrew"},
+	{value: "hi", label: "Hindi"},
+	{value: "hu", label: "Hungarian"},
+	{value: "is", label: "Icelandic"},
+	{value: "id", label: "Indonesian"},
+	{value: "it", label: "Italian (Italy)"},
+	{value: "it-ch", label: "Italian (Switzerland)"},
+	{value: "ja", label: "Japanese"},
+	{value: "kn", label: "Kannada"},
+	{value: "kk", label: "Kazakh"},
+	{value: "kok", label: "Konkani"},
+	{value: "ko", label: "Korean"},
+	{value: "kz", label: "Kyrgyz"},
+	{value: "lv", label: "Latvian"},
+	{value: "lt", label: "Lithuanian"},
+	{value: "ml", label: "Malayalam"},
+	{value: "ms", label: "Malay (Brunei)"},
+	{value: "ms", label: "Malay (Malaysia)"},
+	{value: "mt", label: "Maltese"},
+	{value: "mr", label: "Marathi"},
+	{value: "mn", label: "Mongolian (Cyrillic)"},
+	{value: "ne", label: "Nepali (India)"},
+	{value: "nb-no", label: "Norwegian (Bokmal)"},
+	{value: "no", label: "Norwegian (Bokmal)"},
+	{value: "nn-no", label: "Norwegian (Nynorsk)"},
+	{value: "or", label: "Oriya"},
+	{value: "pl", label: "Polish"},
+	{value: "pt-br", label: "Portuguese (Brazil)"},
+	{value: "pt", label: "Portuguese (Portugal)"},
+	{value: "pa", label: "Punjabi"},
+	{value: "rm", label: "Rhaeto-Romanic"},
+	{value: "ro-md", label: "Romanian (Moldova)"},
+	{value: "ro", label: "Romanian"},
+	{value: "ru-md", label: "Russian (Moldova)"},
+	{value: "ru", label: "Russian"},
+	{value: "sa", label: "Sanskrit"},
+	{value: "sr", label: "Serbian (Cyrillic)"},
+	{value: "sr", label: "Serbian (Latin)"},
+	{value: "sk", label: "Slovak"},
+	{value: "ls", label: "Slovenian"},
+	{value: "sb", label: "Sorbian"},
+	{value: "es-ar", label: "Spanish (Argentina)"},
+	{value: "es-bo", label: "Spanish (Bolivia)"},
+	{value: "es-cl", label: "Spanish (Chile)"},
+	{value: "es-co", label: "Spanish (Colombia)"},
+	{value: "es-cr", label: "Spanish (Costa Rica)"},
+	{value: "es-do", label: "Spanish (Dominican Republic)"},
+	{value: "es-ec", label: "Spanish (Ecuador)"},
+	{value: "es-sv", label: "Spanish (El Salvador)"},
+	{value: "es-gt", label: "Spanish (Guatemala)"},
+	{value: "es-hn", label: "Spanish (Honduras)"},
+	{value: "es", label: "Spanish (International Sort)"},
+	{value: "es-mx", label: "Spanish (Mexico)"},
+	{value: "es-ni", label: "Spanish (Nicaragua)"},
+	{value: "es-pa", label: "Spanish (Panama)"},
+	{value: "es-py", label: "Spanish (Paraguay)"},
+	{value: "es-pe", label: "Spanish (Peru)"},
+	{value: "es-pr", label: "Spanish (Puerto Rico)"},
+	{value: "es", label: "Spanish (Traditional Sort)"},
+	{value: "es-us", label: "Spanish (United States)"},
+	{value: "es-uy", label: "Spanish (Uruguay)"},
+	{value: "es-ve", label: "Spanish (Venezuela)"},
+	{value: "sx", label: "Sutu"},
+	{value: "sw", label: "Swahili"},
+	{value: "sv-fi", label: "Swedish (Finland)"},
+	{value: "sv", label: "Swedish"},
+	{value: "syr", label: "Syriac"},
+	{value: "ta", label: "Tamil"},
+	{value: "tt", label: "Tatar"},
+	{value: "te", label: "Telugu"},
+	{value: "th", label: "Thai"},
+	{value: "ts", label: "Tsonga"},
+	{value: "tn", label: "Tswana"},
+	{value: "tr", label: "Turkish"},
+	{value: "uk", label: "Ukrainian"},
+	{value: "ur", label: "Urdu"},
+	{value: "uz", label: "Uzbek (Cyrillic)"},
+	{value: "uz", label: "Uzbek (Latin)"},
+	{value: "vi", label: "Vietnamese"},
+	{value: "xh", label: "Xhosa"},
+	{value: "yi", label: "Yiddish"},
+	{value: "zu ", label: "Zulu"}
+];
+	</script>
+
 </head>
 <body>
 
@@ -77,6 +248,10 @@ Textarea
 
 <p>
 <span class="sample" id="datepicker"></span>
+</p>
+
+<p>
+<span class="sample" id="select"></span>
 </p>
 
 </div><!-- End demo -->

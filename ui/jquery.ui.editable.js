@@ -317,7 +317,51 @@ $.ui.editable.editors = {
 			return $( "textarea", editable.element ).val().replace(/\r\n|\r|\n/g, "<br/>");
 		}
 	},
-	select: $.noop,
+	select: {
+		element: function( editable ) {
+			return $( "<select></select>" )
+				.append( $.ui.editable.editors.select.content( editable ) )
+				.addClass( inputClass );
+		},
+		content: function( editable ) {
+			var option, selected, options = $([]);
+			$.each( editable._editorOptions.source, function( key, value ) {
+				if ( typeof value === "string" ) {
+					option = $( "<option></option>" ).html( value );
+					selected = editable.value() == value;
+				}
+				else if ( typeof value === "object" && value.value && value.label ) {
+					option = $( "<option></option>" )
+						.val( value.value )
+						.html( value.label );
+					selected = editable.value() == value.value;
+				}
+				else {
+					throw "jQuery UI Editable: \"" + value + "\" is an invalid select source item.";
+					return true;	// continue
+				}
+				if ( selected ) {
+					option.attr( "selected", true );
+				}
+				options = $.merge(options, option);
+			});
+			return options;
+		},
+		bind: function( editable ) {
+			var self = editable;
+			$( "select", editable.element )
+				.focus( function() {
+					self.frame.addClass( activeStateClass );
+				})
+				.blur( function() {
+					self.frame.removeClass( activeStateClass );
+				})
+				.focus();
+		},
+		value: function( editable ) {
+			return $( "select", editable.element ).val();
+		}
+	},
 	spinner: $.noop,
 	datepicker: {
 		element: function( editable ) {

@@ -318,7 +318,6 @@ $.ui.editable.editors = {
 		}
 	},
 	select: $.noop,
-	spinner: $.noop,
 	datepicker: {
 		element: function( editable ) {
 			return $.ui.editable.editors.text.element( editable );
@@ -332,6 +331,17 @@ $.ui.editable.editors = {
 		}
 	}
 };
+
+$.extend($.ui.editable.editors, {
+	spinner: {
+		element: $.ui.editable.editors.text.element,
+		bind: function( editable ) {
+			$.ui.editable.editors.text.bind( editable );
+			$( "input", editable.element ).spinner( editable.options.editorOptions ).focus();
+		},
+		value: $.ui.editable.editors.text.value
+	}
+});
 
 $.ui.editable.defaults = {
 	saveButton: {

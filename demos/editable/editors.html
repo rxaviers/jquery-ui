@@ -8,6 +8,7 @@
 	<script src="../../ui/jquery.ui.core.js"></script>
 	<script src="../../ui/jquery.ui.widget.js"></script>
 	<script src="../../ui/jquery.ui.button.js"></script>
+	<script src="../../ui/jquery.ui.spinner.js"></script>
 	<script src="../../ui/jquery.ui.datepicker.js"></script>
 	<script src="../../ui/jquery.ui.editable.js"></script>
 	<link rel="stylesheet" href="../demos.css">
@@ -30,8 +31,12 @@
 				}
 			}
 		});
+		$( "#spinner" ).editable({
+			editor: "spinner",
+			placeholder: "Spinner"
+		});
 		$( "#datepicker" ).editable({
-			// Set an editor while passing custom options to it
+			// Setting a different editor with custom options
 			editor: {
 				datepicker: {
 					changeMonth: true,
@@ -73,6 +78,10 @@
 
 <p class="sample" id="textarea">
 Textarea
+</p>
+
+<p>
+<span class="sample" id="spinner"></span>
 </p>
 
 <p>

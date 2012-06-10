@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>jQuery UI Photoviewer - Resizing photos</title>
+	<link rel="stylesheet" href="../../themes/base/ui.all.css" type="text/css" media="screen">
+	<script type="text/javascript" src="../../jquery-1.3.2.js"></script>
+	<script type="text/javascript" src="../../external/jquery.mousewheel-3.0.2.js"></script>
+	<script type="text/javascript" src="../../ui/ui.core.js"></script>
+	<script type="text/javascript" src="../../ui/effects.core.js"></script>
+	<script type="text/javascript" src="../../ui/effects.drop.js"></script>
+	<script type="text/javascript" src="../../ui/ui.photoviewer.js"></script>
+	
+	<link type="text/css" href="../demos.css" rel="stylesheet" />
+
+	<script type="text/javascript">
+	$(function() {
+		var html = $('#demo-frame div.wrapper').html();
+		$('#demo-frame div.wrapper').parent().append(html).end().remove();
+		
+		//You don't need this timeout in your pages - Safari has stupid issues with our demo system
+		setTimeout(function() {
+			// resize images, and cross-fade them
+			var hide;
+			$("#photos").photoviewer({
+				resize: true,
+				rotateIn: function(direction) {
+					$(this).fadeIn(hide);
+				},
+				rotateOut: function(direction, finished) {
+					hide = finished;
+				},
+				showOverlay: function() {
+					$(this).show();
+				},
+				hideOverlay: function(finished) {
+					$(this).hide();
+					finished();
+				}
+			});
+		}, $.browser.safari ? 100 : 0);
+	});
+	</script>
+	<style>
+		#photos a img {
+			padding: 1px;
+			border: 2px solid white;
+		}
+		#photos a:hover img {
+			border-color: #c00;
+		}
+	</style>
+</head>
+<body>
+<div class="demo">
+
+	<div id="photos">
+		<a href="photos/IMG_2474.JPG">
+			<img src="photos/IMG_2474-thumb.JPG" />
+		</a>
+		<a href="photos/IMG_2480.JPG">
+			<img src="photos/IMG_2480-thumb.JPG" />
+		</a>
+		<a href="photos/IMG_2487.JPG">
+			<img src="photos/IMG_2487-thumb.JPG" />
+		</a>
+		<a href="photos/IMG_2498.JPG">
+			<img src="photos/IMG_2498-thumb.JPG" />
+		</a>
+	</div>
+
+</div><!-- End demo -->
+
+<div class="demo-description">
+
+<p>
+	Non-thumb photos are in 1600x1200, the viewer tries to resize to fit into the window. The drop effect is replaced with a cross fade.
+</p>
+
+</div><!-- End demo-description -->
+
+<div style="height:1200px; visibility: hidden">big div to make page scroll</div>
+
+</body>
+</html>

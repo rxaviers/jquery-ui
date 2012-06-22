@@ -142,7 +142,12 @@
 			
 			if (direction) {
 				var previous = this._viewer();
-				this.options.rotateOut.call(previous[0], direction, function() {
+				this.options.rotateOut.call(previous[0], {
+						up: "down",
+						down: "up",
+						left: "right",
+						right: "left"
+					}[direction], function() {
 					previous.remove();
 				});
 			}
@@ -156,12 +161,7 @@
 				self._shadow($this);
 				self._overlay().attr("title", anchor.title + self.options.titleSuffix)
 				if (visible) {
-					self.options.rotateIn.call($this[0], {
-						up: "down",
-						down: "up",
-						left: "right",
-						right: "left"
-					}[direction]);
+					self.options.rotateIn.call($this[0], direction);
 				} else {
 					self._overlay().css({
 						left: $(window).scrollLeft(),

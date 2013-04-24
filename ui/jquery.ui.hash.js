@@ -8,8 +8,8 @@
  * http://docs.jquery.com/UI/Hash (to be created)
  *
  * Depends:
- *	jquery.ui.core.js
- *	jquery.ui.widget.js
+ *  jquery.ui.core.js
+ *  jquery.ui.widget.js
  */
 (function( $, undefined ) {
 
@@ -22,18 +22,49 @@ $.widget( "ui.hash", {
 	options: {
 	},
 
+	elements: function() {
+		var elements = $([]);
+		$.each(this.els, function() {
+			elements = elements.add(this);
+		});
+		return elements;
+	},
+
 	set: function(key, el) {
+		el = $(el);
 		this.destroy(key);
 		this.els[key] = el;
+		if($.support.transition) {
+			el.addClass("fade");
+		}
 	},
 
-	show: function(key) {
-		this.clear();
-		this.element.html(this.els[key]);
+	show: function(key, cb) {
+		var self = this;
+		this.clear(function() {
+			self.element.html(self.els[key]);
+			if($.support.transition) {
+				self.els[key].addClass("in");
+			}
+			if(cb) {
+				cb();
+			}
+		});
 	},
 
-	clear: function(ev, key) {
-		this.element.children().detach();
+	clear: function(cb) {
+		if($.support.transition && this.elements().hasClass("in")) {
+			var self = this;
+			this.elements().filter(".in")
+				.one($.support.transition.end, function(ev) {
+					self.element.children().detach();
+					cb && cb();
+				})
+				.removeClass("in");
+		} else {
+			this.element.children().detach();
+			cb && cb();
+		}
 	},
 
 	destroy: function(key) {

@@ -2,27 +2,14 @@ Authors ordered by first contribution
 A list of current team members is available at http://jqueryui.com/about
 
 Paul Bakaus <paul.bakaus@googlemail.com>
-Richard Worth <rdworth@gmail.com>
-Yehuda Katz <wycats@gmail.com>
-Sean Catchpole <sean@sunsean.com>
-John Resig <jeresig@gmail.com>
-Tane Piper <piper.tane@gmail.com>
-Dmitri Gaskin <dmitrig01@gmail.com>
-Klaus Hartl <klaus.hartl@googlemail.com>
-Stefan Petre <stefan.petre@gmail.com>
-Gilles van den Hoven <gilles@webunity.nl>
-Micheil Bryan Smith <micheil@brandedcode.com>
-Jörn Zaefferer <joern.zaefferer@gmail.com>
-Marc Grabanski <m@marcgrabanski.com>
-Keith Wood <kbwood.au@gmail.com>
-Brandon Aaron <brandon.aaron@gmail.com>
-Scott González <scott.gonzalez@gmail.com>
 Eduardo Lundgren <eduardolundgren@gmail.com>
+Richard Worth <rdworth@gmail.com>
+Scott González <scott.gonzalez@gmail.com>
+Marc Grabanski <m@marcgrabanski.com>
 Aaron Eisenberger <aaronchi@gmail.com>
-Joan Piedra <theneojp@gmail.com>
-Bruno Basto <b.basto@gmail.com>
-Remy Sharp <remy@leftlogic.com>
-Bohdan Ganicky <bohdan.ganicky@gmail.com>
+Keith Wood <kbwood.au@gmail.com>
+Jörn Zaefferer <joern.zaefferer@gmail.com>
+Klaus Hartl <klaus.hartl@googlemail.com>
 David Bolter <david.bolter@gmail.com>
 Chi Cheng <cloudream@gmail.com>
 Ca-Phun Ung <pazu2k@gmail.com>
@@ -30,8 +17,10 @@ Ariel Flesler <aflesler@gmail.com>
 Maggie Costello Wachs <fg.maggie@gmail.com>
 Scott Jehl <scott@scottjehl.com>
 Todd Parker <fg.todd@gmail.com>
+Bohdan Ganicky <bohdan.ganicky@gmail.com>
 Andrew Powell <powella@gmail.com>
 Brant Burnett <btburnett3@gmail.com>
+John Resig <jeresig@gmail.com>
 Douglas Neiner <doug@pixelgraphics.us>
 Paul Irish <paul.irish@gmail.com>
 Ralph Whitbeck <ralph.whitbeck@gmail.com>
@@ -42,7 +31,7 @@ Adam Sontag <ajpiano@ajpiano.com>
 Carl Fürstenberg <carl@excito.com>
 Kevin Dalman <development@allpro.net>
 Alberto Fernández Capel <afcapel@gmail.com>
-Jacek Jędrzejewski (http://jacek.jedrzejewski.name)
+Jacek Jędrzejewski <jacek.jedrzejewski@gmail.com>
 Ting Kuei <ting@kuei.com>
 Samuel Cormier-Iijima <sam@chide.it>
 Jon Palmer <jonspalmer@gmail.com>
@@ -88,7 +77,7 @@ Mario Visic <mario@mariovisic.com>
 Xavi Ramirez <xavi.rmz@gmail.com>
 Max Schnur <max.schnur@gmail.com>
 Saji Nediyanchath <saji89@gmail.com>
-Corey Frang <gnarf@gnarf.net>
+Corey Frang <gnarf37@gmail.com>
 Aaron Peterson <aaronp123@yahoo.com>
 Ivan Peters <ivan@ivanpeters.com>
 Mohamed Cherif Bouchelaghem <cherifbouchelaghem@yahoo.fr>
@@ -125,12 +114,14 @@ Carson McDonald <carson@ioncannon.net>
 Jason Davies <jason@jasondavies.com>
 Garrison Locke <gplocke@gmail.com>
 David Murdoch <musicisair@yahoo.com>
+Andrew Powell <andrew@shellcape.org>
 Benjamin Scott Boyle <benjamins.boyle@gmail.com>
 Jesse Baird <jebaird@gmail.com>
 Jonathan Vingiano <jvingiano@gmail.com>
 Dylan Just <dev@ephox.com>
 Hiroshi Tomita <tomykaira@gmail.com>
 Glenn Goodrich <glenn.goodrich@gmail.com>
+Jeff Remy <jfremy@virtuoz.com>
 Tarafder Ashek-E-Elahi <mail.ashek@gmail.com>
 Ryan Neufeld <ryan@neufeldmail.com>
 Marc Neuwirth <marc.neuwirth@gmail.com>
@@ -174,7 +165,7 @@ Douglas Cerna <douglascerna@yahoo.com>
 Bert ter Heide <bertjh@hotmail.com>
 Jasvir Nagra <jasvir@gmail.com>
 Petr Hromadko <yuriy@tokyoscale.com>
-Harri Kilpiö <harri.kilpio@gmail.com>
+Harri Kilpiö <harri.kilpio@gmail.com>
 Lado Lomidze <lado.lomidze@gmail.com>
 Amir E. Aharoni <amir.aharoni@mail.huji.ac.il>
 Simon Sattes <simon.sattes@gmail.com>
@@ -188,8 +179,9 @@ Martin Frost <martinf55@hotmail.com>
 Eneko Illarramendi <eneko@illarra.com>
 EungJun Yi <semtlenori@gmail.com>
 Courtland Allen <courtlandallen@gmail.com>
+Felix Nagel <info@felixnagel.com>
 Viktar Varvanovich <non4eg@gmail.com>
-Danny Trunk <dtrunk90@gmail.com>
+Danny Trunk <dtrunk90@googlemail.com>
 Pavel Stetina <pavel.stetina@nangu.tv>
 Michael Stay <metaweta@gmail.com>
 Steven Roussey <sroussey@gmail.com>
@@ -243,3 +235,6 @@ Zaven Muradyan <megalivoithos@gmail.com>
 Woody Gilk <shadowhand@deviantart.com>
 Zbigniew Motyka <zbigniew.motyka@gmail.com>
 Suhail Alkowaileet <xsoh.k7@gmail.com>
+Toshi MARUYAMA <marutosijp2@yahoo.co.jp>
+David Hansen <hansede@gmail.com>
+Brian Grinstead <briangrinstead@gmail.com>

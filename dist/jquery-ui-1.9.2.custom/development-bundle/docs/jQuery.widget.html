@@ -29,15 +29,15 @@
 <h4><span>Contents:</span></h4>
 <ul class="toc-list">
 <li>
-<a href="#jQuery-widget1">jQuery.widget( name [, base ], prototype )</a><ul><li><a href="#jQuery-widget-name-base-prototype">jQuery.widget( name [, base ], prototype )</a></li></ul>
+<a href="#jQuery-widget1">jQuery.widget( name [, base ], prototype )</a><ul><li>jQuery.widget( name [, base ], prototype )</li></ul>
 </li>
 <li><a href="#jQuery-Widget2">jQuery.Widget</a></li>
 </ul>
 </div><article id="jQuery-widget1" class="entry method"><h2 class="section-title"><span class="name">jQuery.widget( name [, base ], prototype )</span></h2>
 <div class="entry-wrapper">
 <p class="desc"><strong>Description: </strong>Create stateful jQuery plugins using the same abstraction as all jQuery UI widgets.</p>
-<ul class="signatures"><li class="signature">
-<h4 class="name"><a id="jQuery-widget-name-base-prototype" href="#jQuery-widget-name-base-prototype"><span class="icon-link"></span>jQuery.widget( name [, base ], prototype )</a></h4>
+<ul class="signatures"><li class="signature" id="jQuery-widget-name-base-prototype">
+<h4 class="name">jQuery.widget( name [, base ], prototype )</h4>
 <ul>
 <li>
 <div><strong>name</strong></div>
@@ -246,28 +246,28 @@
 </div>
 <div class="quick-nav-section">
 <h3>Methods</h3>
-<div><a href="#method-_create">_create</a></div>
-<div><a href="#method-_delay">_delay</a></div>
-<div><a href="#method-_destroy">_destroy</a></div>
-<div><a href="#method-_focusable">_focusable</a></div>
-<div><a href="#method-_getCreateEventData">_getCreateEventData</a></div>
-<div><a href="#method-_getCreateOptions">_getCreateOptions</a></div>
-<div><a href="#method-_hide">_hide</a></div>
-<div><a href="#method-_hoverable">_hoverable</a></div>
-<div><a href="#method-_init">_init</a></div>
-<div><a href="#method-_off">_off</a></div>
-<div><a href="#method-_on">_on</a></div>
-<div><a href="#method-_setOption">_setOption</a></div>
-<div><a href="#method-_setOptions">_setOptions</a></div>
-<div><a href="#method-_show">_show</a></div>
-<div><a href="#method-_super">_super</a></div>
-<div><a href="#method-_superApply">_superApply</a></div>
-<div><a href="#method-_trigger">_trigger</a></div>
 <div><a href="#method-destroy">destroy</a></div>
 <div><a href="#method-disable">disable</a></div>
 <div><a href="#method-enable">enable</a></div>
 <div><a href="#method-option">option</a></div>
 <div><a href="#method-widget">widget</a></div>
+<div><a href="#method-_create">_create</a></div>
+<div><a href="#method-_destroy">_destroy</a></div>
+<div><a href="#method-_getCreateEventData">_getCreateEventData</a></div>
+<div><a href="#method-_getCreateOptions">_getCreateOptions</a></div>
+<div><a href="#method-_init">_init</a></div>
+<div><a href="#method-_setOptions">_setOptions</a></div>
+<div><a href="#method-_setOption">_setOption</a></div>
+<div><a href="#method-_on">_on</a></div>
+<div><a href="#method-_off">_off</a></div>
+<div><a href="#method-_super">_super</a></div>
+<div><a href="#method-_superApply">_superApply</a></div>
+<div><a href="#method-_delay">_delay</a></div>
+<div><a href="#method-_hoverable">_hoverable</a></div>
+<div><a href="#method-_focusable">_focusable</a></div>
+<div><a href="#method-_trigger">_trigger</a></div>
+<div><a href="#method-_show">_show</a></div>
+<div><a href="#method-_hide">_hide</a></div>
 </div>
 <div class="quick-nav-section">
 <h3>Events</h3>
@@ -278,8 +278,8 @@
 <div class="default">
 <strong>Default: </strong><code>false</code>
 </div>
-<div>Disables the widget if set to <code>true</code>.</div>
-<strong>Code examples:</strong><p>Initialize the widget with the disabled option specified:</p>
+<div>Disables the jQuery.Widget if set to <code>true</code>.</div>
+<strong>Code examples:</strong><p>Initialize the jQuery.Widget with the disabled option specified:</p>
 <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
@@ -290,7 +290,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).widget({ disabled: <span class="literal">true</span> });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).jQuery.Widget({ disabled: <span class="literal">true</span> });</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -316,7 +316,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="comment">// getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> disabled = $( <span class="string">".selector"</span> ).widget( <span class="string">"option"</span>, <span class="string">"disabled"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).widget( <span class="string">"option"</span>, <span class="string">"disabled"</span>, <span class="literal">true</span> );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="comment">// getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> disabled = $( <span class="string">".selector"</span> ).jQuery.Widget( <span class="string">"option"</span>, <span class="string">"disabled"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).jQuery.Widget( <span class="string">"option"</span>, <span class="string">"disabled"</span>, <span class="literal">true</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -350,7 +350,7 @@
 <li>
 <strong>Object</strong>: If the value is an object, then <code>effect</code>, <code>duration</code>, and <code>easing</code> properties may be provided. If the <code>effect</code> property contains the name of a jQuery method, then that method will be used; otherwise it is assumed to be the name of a jQuery UI effect. When using a jQuery UI effect that supports additional settings, you may include those settings in the object and they will be passed to the effect. If <code>duration</code> or <code>easing</code> is omitted, then the default values will be used. If <code>effect</code> is omitted, then <code>"fadeOut"</code> will be used.</li>
 </ul>
-<strong>Code examples:</strong><p>Initialize the widget with the hide option specified:</p>
+<strong>Code examples:</strong><p>Initialize the jQuery.Widget with the hide option specified:</p>
 <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
@@ -361,7 +361,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).widget({ hide: { effect: <span class="string">"explode"</span>, duration: <span class="number">1000</span> } });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).jQuery.Widget({ hide: { effect: <span class="string">"explode"</span>, duration: <span class="number">1000</span> } });</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -387,7 +387,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="comment">// getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> hide = $( <span class="string">".selector"</span> ).widget( <span class="string">"option"</span>, <span class="string">"hide"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).widget( <span class="string">"option"</span>, <span class="string">"hide"</span>, { effect: <span class="string">"explode"</span>, duration: <span class="number">1000</span> } );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="comment">// getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> hide = $( <span class="string">".selector"</span> ).jQuery.Widget( <span class="string">"option"</span>, <span class="string">"hide"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).jQuery.Widget( <span class="string">"option"</span>, <span class="string">"hide"</span>, { effect: <span class="string">"explode"</span>, duration: <span class="number">1000</span> } );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -421,7 +421,7 @@
 <li>
 <strong>Object</strong>: If the value is an object, then <code>effect</code>, <code>duration</code>, and <code>easing</code> properties may be provided. If the <code>effect</code> property contains the name of a jQuery method, then that method will be used; otherwise it is assumed to be the name of a jQuery UI effect. When using a jQuery UI effect that supports additional settings, you may include those settings in the object and they will be passed to the effect. If <code>duration</code> or <code>easing</code> is omitted, then the default values will be used. If <code>effect</code> is omitted, then <code>"fadeIn"</code> will be used.</li>
 </ul>
-<strong>Code examples:</strong><p>Initialize the widget with the show option specified:</p>
+<strong>Code examples:</strong><p>Initialize the jQuery.Widget with the show option specified:</p>
 <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
@@ -432,7 +432,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).widget({ show: { effect: <span class="string">"blind"</span>, duration: <span class="number">800</span> } });</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).jQuery.Widget({ show: { effect: <span class="string">"blind"</span>, duration: <span class="number">800</span> } });</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -458,7 +458,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="comment">// getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> show = $( <span class="string">".selector"</span> ).widget( <span class="string">"option"</span>, <span class="string">"show"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).widget( <span class="string">"option"</span>, <span class="string">"show"</span>, { effect: <span class="string">"blind"</span>, duration: <span class="number">800</span> } );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="comment">// getter</span></code></div></div><div class="container"><div class="line"><code><span class="keyword">var</span> show = $( <span class="string">".selector"</span> ).jQuery.Widget( <span class="string">"option"</span>, <span class="string">"show"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="comment">// setter</span></code></div></div><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).jQuery.Widget( <span class="string">"option"</span>, <span class="string">"show"</span>, { effect: <span class="string">"blind"</span>, duration: <span class="number">800</span> } );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -738,21 +738,21 @@
 <div id="method-destroy"><div class="api-item">
 <h3>destroy()</h3>
 <div>
-		Removes the widget functionality completely. This will return the element back to its pre-init state.
+		Removes the jQuery.Widget functionality completely. This will return the element back to its pre-init state.
 	</div>
 <ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
 </div></div>
 <div id="method-disable"><div class="api-item">
 <h3>disable()</h3>
 <div>
-		Disables the widget.
+		Disables the jQuery.Widget.
 	</div>
 <ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
 </div></div>
 <div id="method-enable"><div class="api-item">
 <h3>enable()</h3>
 <div>
-		Enables the widget.
+		Enables the jQuery.Widget.
 	</div>
 <ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
 </div></div>
@@ -779,7 +779,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> isDisabled = $( <span class="string">".selector"</span> ).widget( <span class="string">"option"</span>, <span class="string">"disabled"</span> );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> isDisabled = $( <span class="string">".selector"</span> ).jQuery.Widget( <span class="string">"option"</span>, <span class="string">"disabled"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -791,7 +791,7 @@
 <div class="api-item">
 <h3>option()<span class="returns">Returns: <a href="http://api.jquery.com/Types#PlainObject">PlainObject</a></span>
 </h3>
-<div>Gets an object containing key/value pairs representing the current widget options hash.</div>
+<div>Gets an object containing key/value pairs representing the current jQuery.Widget options hash.</div>
 <ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
 <div>
 <strong>Code examples:</strong><p>Invoke the  method:</p>
@@ -805,7 +805,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> options = $( <span class="string">".selector"</span> ).widget( <span class="string">"option"</span> );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code><span class="keyword">var</span> options = $( <span class="string">".selector"</span> ).jQuery.Widget( <span class="string">"option"</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -816,7 +816,7 @@
 </div>
 <div class="api-item">
 <h3>option( optionName, value )</h3>
-<div>Sets the value of the widget option associated with the specified <code>optionName</code>.</div>
+<div>Sets the value of the jQuery.Widget option associated with the specified <code>optionName</code>.</div>
 <ul>
 <li>
 <div><strong>optionName</strong></div>
@@ -843,7 +843,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).widget( <span class="string">"option"</span>, <span class="string">"disabled"</span>, <span class="literal">true</span> );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).jQuery.Widget( <span class="string">"option"</span>, <span class="string">"disabled"</span>, <span class="literal">true</span> );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -854,7 +854,7 @@
 </div>
 <div class="api-item">
 <h3>option( options )</h3>
-<div>Sets one or more options for the widget.</div>
+<div>Sets one or more options for the jQuery.Widget.</div>
 <ul><li>
 <div><strong>options</strong></div>
 <div>Type: <a href="http://api.jquery.com/Types#Object">Object</a>
@@ -873,7 +873,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).widget( <span class="string">"option"</span>, { disabled: <span class="literal">true</span> } );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).jQuery.Widget( <span class="string">"option"</span>, { disabled: <span class="literal">true</span> } );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
@@ -891,10 +891,10 @@
 	</div>
 <ul><li><div class="null-signature">This method does not accept any arguments.</div></li></ul>
 </div></div></section><section id="events"><header><h2 class="underline">Events</h2></header><div id="event-create" class="api-item first-item">
-<h3>create( event, ui )<span class="returns">Type: <code>widgetcreate</code></span>
+<h3>create( event, ui )<span class="returns">Type: <code>jQuery.Widgetcreate</code></span>
 </h3>
 <div>
-		Triggered when the widget is created.
+		Triggered when the jQuery.Widget is created.
 	</div>
 <ul>
 <li>
@@ -910,9 +910,8 @@
 <div></div>
 </li>
 </ul>
-<p><em>Note: The <code>ui</code> object is empty but included for consistency with other events.</em></p>
 <div>
-<strong>Code examples:</strong><p>Initialize the widget with the create callback specified:</p>
+<strong>Code examples:</strong><p>Initialize the jQuery.Widget with the create callback specified:</p>
 <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
@@ -927,14 +926,14 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).widget({</code></div></div><div class="container"><div class="line"><code>  create: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).jQuery.Widget({</code></div></div><div class="container"><div class="line"><code>  create: <span class="keyword">function</span>( event, ui ) {}</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
-<p>Bind an event listener to the widgetcreate event:</p>
+<p>Bind an event listener to the jQuery.Widgetcreate event:</p>
 <div class="syntaxhighlighter javascript nogutter">
 	<table>
 		<tbody>
@@ -945,7 +944,7 @@
 					
 				</td>
 				<td class="code">
-					<pre><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).on( <span class="string">"widgetcreate"</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
+					<pre><div class="container"><div class="line"><code>$( <span class="string">".selector"</span> ).on( <span class="string">"jQuery.Widgetcreate"</span>, <span class="keyword">function</span>( event, ui ) {} );</code></div></div></pre>
 				</td>
 			</tr>
 		</tbody>

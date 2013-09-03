@@ -67,16 +67,16 @@
 <div class="quick-nav-section">
 <h3>Events</h3>
 <div><a href="#event-beforeClose">beforeClose</a></div>
-<div><a href="#event-close">close</a></div>
 <div><a href="#event-create">create</a></div>
-<div><a href="#event-drag">drag</a></div>
-<div><a href="#event-dragStart">dragStart</a></div>
-<div><a href="#event-dragStop">dragStop</a></div>
-<div><a href="#event-focus">focus</a></div>
 <div><a href="#event-open">open</a></div>
-<div><a href="#event-resize">resize</a></div>
+<div><a href="#event-focus">focus</a></div>
+<div><a href="#event-dragStart">dragStart</a></div>
+<div><a href="#event-drag">drag</a></div>
+<div><a href="#event-dragStop">dragStop</a></div>
 <div><a href="#event-resizeStart">resizeStart</a></div>
+<div><a href="#event-resize">resize</a></div>
 <div><a href="#event-resizeStop">resizeStop</a></div>
+<div><a href="#event-close">close</a></div>
 </div></section><div class="longdesc" id="entry-longdesc">
 		<p>A dialog is a floating window that contains a title bar and a content area. The dialog window can be moved, resized and closed with the 'x' icon by default.</p>
 
@@ -1485,7 +1485,6 @@
 <div></div>
 </li>
 </ul>
-<p><em>Note: The <code>ui</code> object is empty but included for consistency with other events.</em></p>
 <div>
 <strong>Code examples:</strong><p>Initialize the dialog with the beforeClose callback specified:</p>
 <div class="syntaxhighlighter javascript nogutter">
@@ -1547,7 +1546,6 @@
 <div></div>
 </li>
 </ul>
-<p><em>Note: The <code>ui</code> object is empty but included for consistency with other events.</em></p>
 <div>
 <strong>Code examples:</strong><p>Initialize the dialog with the close callback specified:</p>
 <div class="syntaxhighlighter javascript nogutter">
@@ -1611,7 +1609,6 @@
 <div></div>
 </li>
 </ul>
-<p><em>Note: The <code>ui</code> object is empty but included for consistency with other events.</em></p>
 <div>
 <strong>Code examples:</strong><p>Initialize the dialog with the create callback specified:</p>
 <div class="syntaxhighlighter javascript nogutter">
@@ -1898,7 +1895,6 @@
 <div></div>
 </li>
 </ul>
-<p><em>Note: The <code>ui</code> object is empty but included for consistency with other events.</em></p>
 <div>
 <strong>Code examples:</strong><p>Initialize the dialog with the focus callback specified:</p>
 <div class="syntaxhighlighter javascript nogutter">
@@ -1960,7 +1956,6 @@
 <div></div>
 </li>
 </ul>
-<p><em>Note: The <code>ui</code> object is empty but included for consistency with other events.</em></p>
 <div>
 <strong>Code examples:</strong><p>Initialize the dialog with the open callback specified:</p>
 <div class="syntaxhighlighter javascript nogutter">
@@ -2022,7 +2017,7 @@
 <div></div>
 <ul>
 <li>
-<div><strong>originalPosition</strong></div>
+<div><strong>orginalPosition</strong></div>
 <div>Type: <a href="http://api.jquery.com/Types#Object">Object</a>
 </div>
 <div>The CSS position of the dialog prior to being resized.</div>
@@ -2109,7 +2104,7 @@
 <div></div>
 <ul>
 <li>
-<div><strong>originalPosition</strong></div>
+<div><strong>orginalPosition</strong></div>
 <div>Type: <a href="http://api.jquery.com/Types#Object">Object</a>
 </div>
 <div>The CSS position of the dialog prior to being resized.</div>
@@ -2196,7 +2191,7 @@
 <div></div>
 <ul>
 <li>
-<div><strong>originalPosition</strong></div>
+<div><strong>orginalPosition</strong></div>
 <div>Type: <a href="http://api.jquery.com/Types#Object">Object</a>
 </div>
 <div>The CSS position of the dialog prior to being resized.</div>

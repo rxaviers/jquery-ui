@@ -44,7 +44,7 @@ TestHelpers.loadResources = QUnit.urlParams.min ?
 	} :
 	function( resources ) {
 		$.each( resources.css || [], function( i, resource ) {
-			includeStyle( "themes/base/jquery." + resource + ".css" );
+			includeStyle( "themes/base/" + resource + ".css" );
 		});
 		$.each( resources.js || [], function( i, resource ) {
 			includeScript( resource );

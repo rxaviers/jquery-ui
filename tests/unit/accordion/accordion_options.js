@@ -1,4 +1,4 @@
-(function( $ ) {
+TestHelpers.ready().done(function() {
 
 var equalHeight = TestHelpers.accordion.equalHeight,
 	setupTeardown = TestHelpers.accordion.setupTeardown,
@@ -460,4 +460,4 @@ test( "{ icons: hash }", function() {
 	ok( element.find( ".ui-accordion-header.ui-state-active span.ui-icon" ).hasClass( "a2" ) );
 });
 
-}( jQuery ) );
+});

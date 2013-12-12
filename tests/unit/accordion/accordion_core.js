@@ -1,4 +1,4 @@
-(function( $ ) {
+TestHelpers.ready().done(function() {
 
 var setupTeardown = TestHelpers.accordion.setupTeardown,
 	state = TestHelpers.accordion.state;
@@ -114,4 +114,4 @@ asyncTest( "keyboard support", function() {
 	}, 1 );
 });
 
-}( jQuery ) );
+});

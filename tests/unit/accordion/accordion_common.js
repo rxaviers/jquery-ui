@@ -1,3 +1,5 @@
+TestHelpers.ready().done(function() {
+
 TestHelpers.commonWidgetTests( "accordion", {
 	defaults: {
 		active: 0,
@@ -17,4 +19,6 @@ TestHelpers.commonWidgetTests( "accordion", {
 		beforeActivate: null,
 		create: null
 	}
+});
+
 });

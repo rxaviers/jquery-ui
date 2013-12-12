@@ -1,4 +1,4 @@
-(function( $ ) {
+TestHelpers.ready().done(function() {
 
 var setupTeardown = TestHelpers.accordion.setupTeardown,
 	state = TestHelpers.accordion.state;
@@ -161,4 +161,4 @@ test( "activate", function() {
 	element.accordion( "option", "active", 1 );
 });
 
-}( jQuery ) );
+});

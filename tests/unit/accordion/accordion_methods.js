@@ -1,4 +1,4 @@
-(function( $ ) {
+TestHelpers.ready().done(function() {
 
 var equalHeight = TestHelpers.accordion.equalHeight,
 	setupTeardown = TestHelpers.accordion.setupTeardown,
@@ -128,4 +128,4 @@ test( "widget", function() {
 	strictEqual( widgetElement[ 0 ], element[ 0 ], "same element" );
 });
 
-}( jQuery ) );
+});
